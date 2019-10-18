@@ -2,7 +2,6 @@ import store from '@/store/index.js'
 import VueRouter from 'vue-router'
 
 const isNotAuth = (to, from, next) => {
-	console.log("store ", store.isAuth)
 	if (!store.getters.isAuth) {
 		next()
 		return
@@ -10,7 +9,6 @@ const isNotAuth = (to, from, next) => {
 	next('/')
 }
 const isAuth = (to, from, next) => {
-	console.log("store 1", store)
 	if (store.getters.isAuth) {
 		next()
 		return
